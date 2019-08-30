@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+<h1 style="text-align: center; font-size: 25px; margin-bottom: 30px;">Before You Upload...</h1>
+<div class="container">
+    <div class="jumbotron-poke-inverse">
+        <div class="row">
+            <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background-color: #282828; padding:15px; margin: 0;">
+                <img src="static/images/Zapdos.jpeg" width="100%" height="100%">
+            </div>
+            <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background-color: #282828; padding:15px; margin: 0;">
+                <img src="static/images/Eevee.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <div class="jumbotron-poke-inverse">
+            <h3>
+                The CNN trains on data that are cropped and optimized in a way such that the Pokémon is <u><b>in the center of the picture facing forward</b></u>. 
+                As a result, the trained model also works best with similar images. (Like this Zapdos and this Eevee) In addition, the uploaded image must be a square since
+                the neuronet only takes input of dimension 128x128. If the image is not a square, it will be automatically reshaped into one, which could cause stretching and 
+                might potentially result in the decrease of accuracy.
+            </h3>
+            <div class="text-right">
+                    <a href="/upload_file" class="btn btn-poke-inverse">
+                        Continue!
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

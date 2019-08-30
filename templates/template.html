@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Pokemon</title>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="icon" href="/static/images/icon.png">
+
+    <style>
+        * {
+            font-family: Baskerville, Arial
+        }
+        .title {
+            margin-bottom: 20px;
+            font-family: Impact, Baskerville;
+        }
+        .card-title {
+            font-size: 40px;
+        }
+        .btn-poke {
+            background-color: #282828;
+            font-size: 18px;
+            color: white;
+        }
+        .btn-poke:hover {
+            color: lightgray;
+        }
+        .btn-poke2 {
+            background-color: #ff3838;
+            color: white;
+            font-size: 25px;
+            font-family: Impact;
+            padding: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+        .btn-poke2:hover {
+            color: #282828;
+        }
+        .btn-poke-inverse {
+            background-color: white;
+            color: #ff3838;
+            font-size: 25px;
+            font-family: Impact;
+            padding: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .btn-poke-inverse:hover {
+            color: #cc2b2b;
+        }
+        .jumbotron-poke {
+            background-color: #ff3838;
+        }
+        .jumbotron-poke-inverse {
+            background-color: #282828;
+            border-radius: 5px;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .card-text {
+            font-size: 17px;
+        }
+        h1 {
+            font-family: Impact, Baskerville;
+            font-size: 50px;
+        }
+        h3 {
+            font-family: Baskerville, Arial;
+            color: white;
+            line-height: 30px;
+            font-size: 20px;
+        }
+        .container {
+            width: 70%;
+        }
+        a {
+            color: #282828;
+        }
+        a:hover {
+            color: #282828;
+        }
+
+        @media (max-width: 768px) {
+            #about {
+                margin-top: 10px;
+            }
+            #Nintendo {
+                margin-bottom: 10px;
+            }
+            #title {
+                font-size: 40px;
+            }
+            #copyright {
+                font-size:20px;
+            }
+        }
+        @media (min-width: 768px) {
+            #copyright {
+                font-size: 30px;
+            }
+        }
+        @media (min-width: 1200px) {
+            #result {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #result-sm {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-poke">
+        <div class="text-center">
+            <a href="/home">
+                <h1 class="title" id="title">
+                    <span class="glyphicon glyphicon-flash" aria-hidden="True" style="color: #FAD61D"></span>
+                    What's that Pokemon?
+                    <span class="glyphicon glyphicon-flash" aria-hidden="True" style="color: #FAD61D"></span>
+                </h1>
+            </a>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+    <div class="jumbotron jumbotron-poke" style="padding: 20px; padding-top: 5px; margin-top: 50px; margin-bottom: 0;">
+        <h1 style="font-family: Impact; color: #282828;" id="copyright">
+            <span class="glyphicon glyphicon-flash" aria-hidden="True" style="color: #FAD61D"></span>
+            Lance Zhang 2019
+            <span class="glyphicon glyphicon-flash" aria-hidden="True" style="color: #FAD61D"></span>
+        </h1>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
