@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7b39b48-97bf-4732-85d4-c02111094abe" name="Default Changelist" comment="" />
+    <list default="true" id="b7b39b48-97bf-4732-85d4-c02111094abe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dictionaries.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 16:33:45.150873.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 16:34:34.935540.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 17:41:46.355580.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 17:42:07.976475.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 17:42:51.948094.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 17:43:53.083777.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 17:54:38.106003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:11:54.021619.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:12:17.571707.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:12:41.857387.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:13:53.195011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:14:40.627928.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:18:28.352316.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/input2019-08-30 18:20:10.645848.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/before_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/before_upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload_file.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload_file.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload_file_backup.html" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,15 +36,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1PGvoYthr7IK1au9fIKsxPLBQYI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -30,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/static/models" />
       <recent name="$PROJECT_DIR$/static/images" />
       <recent name="$PROJECT_DIR$" />
@@ -68,10 +103,26 @@
       <workItem from="1566058271301" duration="290000" />
       <workItem from="1566058880824" duration="5107000" />
       <workItem from="1566313128349" duration="1708000" />
+      <workItem from="1567153621049" duration="5249000" />
+      <workItem from="1567164980195" duration="1000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

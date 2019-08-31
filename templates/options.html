@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "template.html" %}
+{% block content %}
+<h1 style="text-align: center; font-size: 40px; margin-bottom: 30px; margin-top: 50px;">Model ID (Recommended)</h1>
+<div class="container", style="width: 80%;">
+    <div class="jumbotron-poke-inverse" style="padding-bottom: 30px;">
+        <h3>A model ID specify specific features of the target pokemon. By providing a model ID, the accuracy of predictions can be <b><u>Drastically</u></b> improved.</h3>
+        <h3>Here are a few options for model IDs:</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Method</th>
+                    <th scope="col">Available options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Types</td>
+                    <td>The type of your pokemon. (Fire, Water, Electric, etc.)</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Initial</td>
+                    <td>First Letter of your Pokemon's name (A~Z)</td>
+                </tr>
+            </tbody>
+        </table>
+        <form method="POST" action="/choose_file", style="margin-bottom: 20px; margin-top: 20px;">
+            <div class="form-group">
+                <label for="model_id"></label><h3 style="font-size: 20px; color: white;">Model ID (Advanced Option)</h3></label>
+                <input type="text" name="model_id", id="model_id" style="width: 250px;">
+            </div>
+            <button type="submit" class="btn btn-poke" style="font-size: 20px; padding-left: 15px; padding-right: 15px; background-color: white; color: #282828;">Submit ID</button>
+            <a href="/skip" class="btn btn-poke" style="color: #282828; background-color: white; font-size: 20px; padding-left: 10px;">Skip</a>
+        </form>
+    </div>
+    {% if warning == True %}
+    <div class="alert alert-danger" style="font-size: 15px; margin-top: 10px;">
+        Invalid Model ID, please read instruction above
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
