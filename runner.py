@@ -51,11 +51,10 @@ def upload():
 
     #requesting model_id from options.html
     model_id = request.form["model_id"]
-    if model_id.lower() not in [i.split("/")[-1][:-3] for i in glob("static/models/*.h5")]:
-        if model_id.lower() != "default":
-            return render_template("options.html", warning=True)
-        else:
-            model_id = "default"
+    if len(model_id) > 0:
+        if model_id.lower() not in [i.split("/")[-1][:-3].lower() for i in glob("static/models/*.h5")]:
+            if model_id.lower() != "default":
+                return render_template("options.html", warning=True)
 
     #creating model_name according to model_id
     if len(model_id) > 0:
@@ -70,22 +69,34 @@ def upload():
     image = Image.open(file_path)
     image = image.resize((128,128))
     image_array = np.array([np.asarray(image, dtype="float64")[:,:,:3] / 255.]).reshape((-1,128,128,3))
-    print("Processing complete\nLoading model --> " + model_name)
+    print("Processing complete\nLoading model --> " + model_id)
 
-    #loading a model and making a prediction
-    model = tf.keras.models.load_model(os.path.join("static/models",model_name))
-    prediction = list(model.predict(image_array)[0])
+    if model_id != "default":
+        #loading a model and making a prediction
+        model = tf.keras.models.load_model(os.path.join("static/models",model_name))
+        prediction = list(model.predict(image_array)[0])
 
-    #interpreting the prediction based on model_id
-    model_keys = shelve.open("static/databases/dictionaries")
-    prediction = prediction.index(max(prediction))
-    
-    if model_id == "default":
-        prediction = "default"
-    elif len(model_id) > 1:
-        prediction = model_keys[model_id.lower()][prediction]
+        #interpreting the prediction based on model_id
+        model_keys = shelve.open("static/databases/dictionaries")
+        prediction = prediction.index(max(prediction))
+        if len(model_id) > 1:
+            prediction = model_keys[model_id.lower()][prediction]
+        else:
+            prediction = model_keys[model_id.upper()][prediction]         
     else:
-        prediction = model_keys[model_id.upper()][prediction]
+        prediction = [0,0] #prediction index, prediction strength
+        for i in range(1,4):
+            model = tf.keras.models.load_model(os.path.join("static/models","default" + str(i) + ".h5"))
+            subPrediction = list(model.predict(image_array)[0])
+            preditionStrength = max(subPrediction)
+            if preditionStrength >= prediction[1]:
+                prediction[0] = prediction.index(max(prediction))
+                prediction[1] = preditionStrength
+                model_id = "default{}".format(str(i))
+        prediction = prediction[0]
+        model_keys = shelve.open("static/databases/dictionaries")
+        prediction = model_keys[model_id.lower()][prediction]
+    
     print("Prediction --> " + prediction)
 
     #choosing a sample image of the pokemon & processing it
@@ -105,4 +116,4 @@ def upload():
 
 if __name__ == "__main__":
     print("Initializing...")
-    app.run(debug=True)
+    app.run(debug=False, host= '0.0.0.0')

@@ -4,7 +4,7 @@
 <div class="container", style="width: 80%;">
     <div class="jumbotron-poke-inverse" style="padding-bottom: 30px;">
         <h3>A model ID specify specific features of the target pokemon. By providing a model ID, the accuracy of predictions can be <b><u>Drastically</u></b> improved.</h3>
-        <h3>Here are a few options for model IDs:</h3>
+        <h3>Here are two options for model IDs:</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -26,6 +26,7 @@
                 </tr>
             </tbody>
         </table>
+        <h3>The accuracy of the prediction will drop significantly without a model ID, which is why enter a model ID is highly recommended.</h3>
         <form method="POST" action="/upload", style="margin-bottom: 20px; margin-top: 20px;">
             <div class="form-group">
                 <label for="model_id"></label><h3 style="font-size: 20px; color: white;">Model ID (Advanced Option)</h3></label>
@@ -37,7 +38,8 @@
     </div>
     {% if warning == True %}
     <div class="alert alert-danger" style="font-size: 15px; margin-top: 10px;">
-        Invalid Model ID, please read instruction above
+        Invalid Model ID, please read instruction above <br>
+        (Only Generation I Pokémons are supported)
     </div>
     {% endif %}
 </div>
