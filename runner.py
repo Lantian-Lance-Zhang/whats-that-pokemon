@@ -36,7 +36,7 @@ def options():
     filename = file.filename
     print("Received file --> " + filename)
 
-    if filename.split(".")[-1] in ["png","jpg"]:
+    if filename.split(".")[-1] in ["png","jpg","jpeg"]:
         new_fn = "input" + str(datetime.now()) + ".png"
         new_path = os.path.join("static/uploads", new_fn)
         print("Assigned path --> " + new_path)
