@@ -62,6 +62,8 @@ def upload():
     if len(model_id) > 0:
         if model_id.lower() not in [i.split("/")[-1][:-3].lower() for i in glob("static/models/*.h5")]:
             if model_id.lower() != "default":
+                print(model_id)
+                print([i.split("/")[-1][:-3].lower() for i in glob("static/models/*.h5")])
                 return render_template("options.html", warning=True)
 
     #creating model_name according to model_id
