@@ -114,7 +114,7 @@ def upload():
     #choosing a sample image of the pokemon & processing it
     target_dir = os.path.join("static/train", prediction.title())
     sample_dir = os.listdir(target_dir)
-    sample_dir = sample_dir[0]
+    sample_dir = os.path.join(target_dir, sample_dir[randrange(0,10)])
     print("Sample image --> " + sample_dir)
 
     #saving data for future analysis
