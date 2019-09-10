@@ -59,9 +59,9 @@ def upload():
     #creating model_name according to model_id
     if len(model_id) > 0:
         if len(model_id) > 1:
-            model_id = model_id.upper()
-        else:
             model_id = model_id.lower()
+        else:
+            model_id = model_id.upper()
         print("Received model_id --> " + model_id + "\nLength = " + str(len(model_id)))
         model_name = model_id + ".h5"
     else:
