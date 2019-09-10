@@ -8,9 +8,15 @@ from datetime import datetime
 import shelve
 from glob import glob
 from random import randrange
-from glob import glob
+import warnings
+warnings.simplefilter(action='ignore', category=Warning)
 
 app = Flask(__name__)
+# stats = shelve.open("/static/databases/stat")
+# if stats["runs"]:
+#     stats["runs"] += 1
+# else:
+#     stats["runs"] = 1
 file_path = "default"
 
 @app.route("/")
@@ -39,7 +45,7 @@ def options():
     else:
         print("False data type --> " + filename.split(".")[-1])
         return render_template("upload_file.html", warning=True)
-    return render_template("options.html")
+    return render_template("options.html", filename=file_path)
 
 @app.route("/upload_file", methods=["GET","POST"])
 def upload_file():
@@ -47,7 +53,9 @@ def upload_file():
 
 @app.route("/upload", methods=["GET","POST"])
 def upload():
-    global file_path
+    #requesting filepath from page (Solution to threading issue)
+    file_path = request.form["filename"]
+    print("Filepath --> " + file_path)
 
     #requesting model_id from options.html
     model_id = request.form["model_id"]
@@ -106,7 +114,6 @@ def upload():
     #choosing a sample image of the pokemon & processing it
     target_dir = os.path.join("static/train", prediction.title())
     sample_dir = os.listdir(target_dir)
-    print(sample_dir)
     sample_dir = sample_dir[0]
     print("Sample image --> " + sample_dir)
 
@@ -119,4 +126,5 @@ def upload():
 
 if __name__ == "__main__":
     print("Initializing...")
-    app.run(debug=False, host= '0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', threaded=True)
+    #gunicorn -b 0.0.0.0:5000 -w 5 runner:app
