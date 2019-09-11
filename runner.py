@@ -30,12 +30,13 @@ def before_upload():
 
 @app.route("/options", methods=["GET","POST"])
 def options():
-    global file_path
+    print("Receiving file ... ")
 
     file = request.files["inputFile"]
     filename = file.filename
     print("Received file --> " + filename)
-
+    
+    print("File type --> " + filename.split(".")[-1])
     if filename.split(".")[-1] in ["png","jpg","jpeg"]:
         new_fn = "input" + str(datetime.now()) + ".png"
         new_path = os.path.join("static/uploads", new_fn)
