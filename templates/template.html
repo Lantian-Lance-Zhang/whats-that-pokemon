@@ -12,12 +12,16 @@
     <link rel="icon" href="/static/images/icon.png">
 
     <style>
+        @font-face {
+            font-family: "Remachine";
+            src: url("static/fonts/RemachineScript.ttf")
+        }
         * {
             font-family: Baskerville, Arial
         }
         .title {
             margin-bottom: 20px;
-            font-family: Impact, Bookman;
+            font-family: Remachine, Impact;
         }
         .card-title {
             font-size: 40px;
@@ -26,6 +30,7 @@
             background-color: #282828;
             font-size: 18px;
             color: white;
+            font-family: Baskerville, Impact;
         }
         .btn-poke:hover {
             color: lightgray;
@@ -34,7 +39,7 @@
             background-color: #ff3838;
             color: white;
             font-size: 25px;
-            font-family: Impact, Bookman;
+            font-family: Remachine, Impact, Bookman;
             padding: 0;
             padding-left: 30px;
             padding-right: 30px;
@@ -49,7 +54,7 @@
             background-color: white;
             color: #ff3838;
             font-size: 25px;
-            font-family: Impact, Bookman;
+            font-family: Remachine, Impact, Bookman;
             padding: 0;
             padding-left: 30px;
             padding-right: 30px;
@@ -73,7 +78,7 @@
             font-size: 17px;
         }
         h1 {
-            font-family: Impact, Baskerville;
+            font-family: Remachine, Impact;
             font-size: 50px;
         }
         h3 {
@@ -94,6 +99,7 @@
         }
         a:hover {
             color: #282828;
+            text-decoration: None;
         }
 
         @media (max-width: 768px) {
@@ -116,6 +122,9 @@
             }
             #title {
                 font-size: 60px;
+            }
+            input {
+                width: 250px;
             }
         }
         @media (min-width: 1200px) {
@@ -142,16 +151,19 @@
             .btn-poke, .btn-poke2, .btn-poke-inverse {
                 font-size: 15px;
             }
+            input {
+                width: 200px;
+            }
         }
-	@media (max-width: 500px){
+	@media (max-width: 450px){
 	    #title {
 	        font-size: 25px;
 	    }
 	    .container {
-		width: 95%;
+		    width: 95%;
 	    }
-	    .input_field {
-		width: 130px;
+	    input {
+		    width: 130px;
 	    }
 	}
 
