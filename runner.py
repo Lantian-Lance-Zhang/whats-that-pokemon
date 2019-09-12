@@ -25,11 +25,14 @@ def before_upload():
 
 @app.route("/options", methods=["GET","POST"])
 def options():
-    print("Receiving file ... ")
+    try:
+        print("Receiving file ... ")
 
-    file = request.files["inputFile"]
-    filename = file.filename
-    print("Received file --> " + filename)
+        file = request.files["inputFile"]
+        filename = file.filename
+        print("Received file --> " + filename)
+    except:
+        return render_template("home.html")
     
     print("File type --> " + filename.split(".")[-1])
     if filename.split(".")[-1] in ["png","jpg","jpeg"]:
@@ -49,11 +52,12 @@ def upload_file():
 
 @app.route("/upload", methods=["GET","POST"])
 def upload():
-    global models
-    
-    #requesting filepath from page (Solution to threading issue)
-    file_path = request.form["filename"]
-    print("Filepath --> " + file_path)
+    try:
+        #requesting filepath from page (Solution to threading issue)
+        file_path = request.form["filename"]
+        print("Filepath --> " + file_path)
+    except:
+        return render_template("home.html")
 
     #requesting model_id from options.html
     model_id = request.form["model_id"]
@@ -62,7 +66,7 @@ def upload():
             if model_id.lower() != "default":
                 print(model_id)
                 print([i.split("/")[-1][:-3].lower() for i in glob("static/models/*.h5")])
-                return render_template("options.html", warning=True)
+                return render_template("options.html", warning=True, filename=file_path)
 
     #creating model_name according to model_id
     if len(model_id) > 0:
