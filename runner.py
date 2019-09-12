@@ -1,3 +1,5 @@
+import warnings
+warnings.simplefilter(action='ignore', category=Warning)
 from flask import Flask, render_template, request, redirect
 import os
 from time import sleep
@@ -8,15 +10,8 @@ from datetime import datetime
 import shelve
 from glob import glob
 from random import randrange
-import warnings
-warnings.simplefilter(action='ignore', category=Warning)
 
 app = Flask(__name__)
-# stats = shelve.open("/static/databases/stat")
-# if stats["runs"]:
-#     stats["runs"] += 1
-# else:
-#     stats["runs"] = 1
 file_path = "default"
 
 @app.route("/")
@@ -54,6 +49,8 @@ def upload_file():
 
 @app.route("/upload", methods=["GET","POST"])
 def upload():
+    global models
+    
     #requesting filepath from page (Solution to threading issue)
     file_path = request.form["filename"]
     print("Filepath --> " + file_path)
