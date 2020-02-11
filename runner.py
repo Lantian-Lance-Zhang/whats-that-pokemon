@@ -61,6 +61,11 @@ def upload():
 
     #requesting model_id from options.html
     model_id = request.form["model_id"]
+	
+	#modification for stanford: do not allow blank model_id
+	if len(model_id) == 0:
+		return render_template("options.html", warning=True, filename=file_path)
+	
     if len(model_id) > 0:
         if model_id.lower() not in [i.split("/")[-1][:-3].lower() for i in glob("static/models/*.h5")]:
             if model_id.lower() != "default":
